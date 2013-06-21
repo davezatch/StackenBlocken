@@ -26,13 +26,30 @@ jQuery.fn.setUpCanvas = function(){
       // console.log(mx);
 
       // model.context.rotate(model.angle);
-      console.log(mx);
+      // console.log(mx);
+      console.group('current x and y ');
       console.log(currentX);
-      console.log(currentX <= this.width + mx);
+      console.log(currentY);
+      console.groupEnd();
+      console.group('this x and y ');
+      console.log(this.width);
+      console.log(this.height);
+      console.groupEnd();
 
-      var isContained = (this.x <= currentX) && (this.x + this.width >= currentX) &&
-              (this.y <= currentY) && (this.y + this.height >= currentY);
+      // var test = currentX <= mx + this.width <= currentX - this.width;
+
+    console.log(this.x <= currentX);
+    console.log((+(this.x)) + this.width >= currentX);
+    console.log(this.y <= currentY);
+    console.log((+(this.y) * 2) + this.height >= currentY);
+
+      // var isContained = (this.x <= currentX) && (this.x + this.width >= currentX) &&
+      //         (this.y <= currentY) && (this.y + this.height >= currentY);
+      var isContained = (this.x <= currentX) && ((+((this.x) * 2) + this.width >= currentX)) &&
+              (this.y <= currentY) && (((+(this.y) * 2) + this.height >= currentY));
+
         // console.log(isContained);
+
         return isContained;
     }
     
@@ -49,21 +66,28 @@ jQuery.fn.setUpCanvas = function(){
         this.y = 100;
         this.width = model.width;
         this.height = 200;
-        cX = x + width*0.5;
-        cY = y + height*0.5;
-        model.context.translate(x + .5*width, y + .5*height);
+
+        this.firstX = -0.5*this.width;
+        this.firstY = -0.5*this.height;
+
+        cX = x + this.width*0.5;
+        cY = y + this.height*0.5;
+        model.context.translate(this.x + .5*this.width, this.y + .5*this.height);
         model.context.rotate(ang);
         model.context.fillStyle = model.bgColor;
-        model.context.fillRect(-0.5*width, -0.5*height, width, height);
+        model.context.fillRect(this.firstX, this.firstY, this.width, this.height);
     }
     updateRectangle(model.angle);// display the rectangle/square
     
     $( model.cnv ).mousedown(function(event){
-        var currentX = event.clientX * Math.cos(-model.angle) - event.clientY * Math.sin(-model.angle);
-          var currentY = event.clientX * Math.sin(-model.angle) + event.clientY * Math.cos(-model.angle);  
+          console.log(model.angle);
 
         var mx = event.clientX;
         var my = event.clientY;
+        var currentX = mx;
+          var currentY = my;  
+
+        console.log(this.x);
 
           
         if (contains(mx, my, currentX, currentY)) {
@@ -74,9 +98,12 @@ jQuery.fn.setUpCanvas = function(){
                 // calculate move angle minus the angle onclick
                 model.angle =  ( getAngle( cX + offX, cY + offY, event.clientX, event.clientY  ) - clickAngle);
 
+                currentX = mx * Math.cos(-model.angle) - my * Math.sin(-model.angle) - 10;
+                  currentY = mx * Math.sin(-model.angle) + my * Math.cos(-model.angle - 10);  
 
                 updateRectangle(model.angle);
-                updateCounter(Math.round(model.angle * 180 / Math.PI));
+                // updateCounter(Math.round(model.angle * 180 / Math.PI));
+                updateCounter(model.angle);
             });
         }
             // console.log(this.x);

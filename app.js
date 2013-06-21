@@ -111,7 +111,7 @@ function CanvasState(canvas) {
 
       myState.angle =  ( myState.getAngle( myState.dragoffx + myState.selection.offsetLeft, myState.dragoffy + myState.selection.offsetTop, event.clientX, event.clientY  ) - myState.clickAngle);
 
-      myState.updateRectangle(myState.angle);
+      myState.draw(myState.angle);
 
       myState.valid = true; // Something's dragging so we must redraw
     }
@@ -140,26 +140,6 @@ CanvasState.prototype.addShape = function(shape) {
 
 CanvasState.prototype.clear = function() {
   this.ctx.clearRect(0, 0, this.width, this.height);
-}
-
-CanvasState.prototype.updateRectangle = function(ang) {
-    // model.context.clearRect(0, 0, 300, 300);
-    // model.cnv.width = model.cnv.width;
-    
-    // offX = myState.selection.offsetLeft;
-    // offY = myState.selection.offsetTop;
-    
-    myState.ctx.setTransform(1,0,0,1,0,0);
-    var x = 100;
-    var y = 100;
-    var width = myState.selection.width;
-    var height = 200;
-    cX = x + width*0.5;
-    cY = y + height*0.5;
-    myState.ctx.translate(x + .5*width, y + .5*height);
-    myState.ctx.rotate(ang);
-    myState.ctx.fillStyle = myState.selection.bgColor;
-    myState.ctx.fillRect(-0.5*width, -0.5*height, width, height);
 }
 
 CanvasState.prototype.getAngle = function( cX, cY, mX, mY ) {
