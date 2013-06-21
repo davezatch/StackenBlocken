@@ -2,112 +2,25 @@
 <html>
 <head>
     <title>StackenBlocken!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script type="text/javascript" src="app3.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 
-    <style>
-        .container {
-            position: relative;
-            background-color: #c3bed5;
-            width: 500px;
-            height: 500px;
-            margin: 0 auto;
-            padding: 40px;
-        }
-        .rotateme {
-            z-index: 10;
-        }
-        #rotate1 {
-            position: absolute;
-            background-color: #d53f3f;
-            left: 100px;
-            top: 100px;
-            width: 200px;
-            height: 100px;
-            border: 1px solid gray;
-            transform: rotate(27deg);
-            -moz-transform: rotate(27deg);
-            -webkit-transform: rotate(27deg);
-            -o-transform: rotate(27deg);
-            -ms-transform: rotate(27deg);
-        }
-        #rotate2 {
-            background-color: #d5cc43;
-            position: absolute;
-            left: 350px;
-            top: 50px;
-            width: 150px;
-            height: 75px;
-            border: 1px solid gray;
-            transform: rotate(193deg);
-            -moz-transform: rotate(193deg);
-            -webkit-transform: rotate(193deg);
-            -o-transform: rotate(193deg);
-            -ms-transform: rotate(193deg);
-        }
-        #rotate3 {
-            background-color: #75aa61;
-            position: absolute;
-            top: 310px;
-            left: 50px;
-            width: 150px;
-            height: 75px;
-            border: 1px solid gray;
-            transform: rotate(241deg);
-            -moz-transform: rotate(241deg);
-            -webkit-transform: rotate(241deg);
-            -o-transform: rotate(241deg);
-            -ms-transform: rotate(241deg);
-        }
-        #rotate4 {
-            background-color: #423faa;
-            position: absolute;
-            top: 370px;
-            left: 280px;
-            width: 150px;
-            height: 75px;
-            border: 1px solid gray;
-            transform: rotate(123deg);
-            -moz-transform: rotate(123deg);
-            -webkit-transform: rotate(123deg);
-            -o-transform: rotate(123deg);
-            -ms-transform: rotate(123deg);
-        }
-        .zone {
-            z-index: 1;
-        }
-        #zone4 {
-            content: "place here";
-            position: absolute;
-            top: 367px;
-            left: 277px;
-            width: 158px;
-            height: 83px;
-            border: 3px dashed;
-            box-sizing: border-box;
-        }
-        #control-panel {
-            margin-top: 20px;
-            width: 100%;
-            height: 100px;
-            border: 1px dotted;
-        }
-    </style>
 </head>
 <body>
     <h1>STACKENBLOCKEN</h1>
     <div id="control-panel">
         <button class="start">Go!</button>
-        <div id="angle"></div>
-        <div id="timer"></div>
-        </div>
+        <button class="score">What's my score!</button>
+        <button class="reset">New game!</button>
+        <br>
+        <ul>
+        <li>Time left: <span id="timer"></span></li>
+        <li>Score: <span id="score"></span></li>
+        </ul>
+    </div>
     <div class="container">
 
-        <div id="rotate1" class="rotateme"></div>
-        <div id="rotate2" class="rotateme"></div>
-        <div id="rotate3" class="rotateme"></div>
-        <div id="rotate4" class="rotateme"></div>
-        <div id="zone4" class="zone"></div>
     </div>
 </body>
 </html>

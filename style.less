@@ -1,0 +1,49 @@
+.rotate(@x) {
+    transform: rotate(@x);
+    -moz-transform: rotate(@x);
+    -webkit-transform: rotate(@x);
+    -o-transform: rotate(@x);
+    -ms-transform: rotate(@x);
+}
+.container {
+    position: relative;
+    background-color: #e0e0e0;
+    width: 550px;
+    height: 550px;
+    margin: 0 auto;
+}
+.rotateme {
+    z-index: 10;
+    position: absolute;
+    &:after {
+        content: "^ This way up";
+        position: relative;
+    }
+}
+.zone {
+    z-index: 1;
+    position: absolute;
+    border: 3px dashed;
+    box-sizing: border-box;
+}
+#control-panel {
+    margin-top: 20px;
+    border: 1px dotted;
+}
+#score {
+    width: 40px;
+    // height: 40px;
+    border: 1px dotted;
+}
+button {
+    background-color: #ff112b;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    &:active,
+    &:focus {
+        box-shadow: 1px 1px 2px darken(#ff112b, 20%) inset;
+    }
+}
