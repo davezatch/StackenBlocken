@@ -172,14 +172,14 @@ $(document).ready(function() {
         if (event.target.tagName === "BODY") {
             switch(event.which)
             {
-                // key: "g"
-                case 103:   
-                    startGame();
-                    break;
-                // key: "r"
-                case 114:   
-                    createBoard();
-                    break;
+            // key: "g"
+            case 103:
+                startGame();
+                break;
+            // key: "r"
+            case 114:
+                createBoard();
+                break;
             }
 
         }

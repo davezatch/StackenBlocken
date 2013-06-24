@@ -3,6 +3,7 @@ html {
   font-family: "Helvetica Neue";
   background-color: #ececec;
   margin: 0;
+  color: #333;
 }
 * {
   box-sizing: border-box;
@@ -34,7 +35,7 @@ h1 {
 }
 .tagline {
   width: 400px;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 .shortcut {
   font-size: 0.9em;
@@ -77,6 +78,7 @@ h1 {
   color: #00a656;
 }
 .rotateme {
+  color: #171717;
   z-index: 10;
   position: absolute;
   border: 1px solid rgba(133, 124, 127, 0.6);
