@@ -1,11 +1,20 @@
 body,
 html {
   font-family: "Helvetica Neue";
+  background-color: #ececec;
+  margin: 0;
 }
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #3580f0;
+}
+a:hover {
+  color: #0a3a82;
 }
 ul {
   list-style-type: none;
@@ -15,24 +24,51 @@ h1 {
   margin: 0 auto;
   width: 550px;
 }
+p {
+  display: none;
+}
+.tagline {
+  width: 400px;
+  margin: 20px auto;
+}
 .container {
   position: relative;
-  background-color: #e0e0e0;
+  background-color: #c4c4c4;
   width: 550px;
   height: 550px;
   margin: 0 auto;
 }
 #control-panel {
   width: 550px;
+  height: 120px;
   margin: 0 auto;
   margin-top: 20px;
+}
+.controls {
+  float: left;
+}
+.top-scores {
+  float: right;
+  text-shadow: 1px 1px 1px #cecece;
+}
+.top-scores #score1 {
+  color: #ff4d4d;
+}
+.top-scores #score2 {
+  color: #3580f0;
+}
+.top-scores #score3 {
+  color: #00a656;
 }
 .rotateme {
   z-index: 10;
   position: absolute;
+  border: 1px solid rgba(133, 124, 127, 0.6);
+  box-shadow: 0px 0px 10px 0px #8B8B8B;
+  padding: 10px;
 }
 .rotateme:after {
-  content: "^ This way up";
+  content: "↑ This way up";
   position: relative;
 }
 .zone {
@@ -48,7 +84,7 @@ h1 {
   font-size: 20px;
 }
 button {
-  background-color: #4a7fff;
+  background-color: #3580f0;
   font-size: 15px;
   color: white;
   padding: 10px 20px;
@@ -57,15 +93,34 @@ button {
   border: none;
 }
 button:hover {
-  background-color: #175bff;
+  background-color: #0a3a82;
 }
-button:active,
-button:focus {
-  box-shadow: 1px 1px 2px #aa0013 inset;
+.video {
+  width: 420px;
+  margin: 40px auto;
+  text-align: center;
 }
-button.reset {
-  background-color: #00257d;
+.video .arrow1 {
+  color: #ff4d4d;
 }
-button.reset:hover {
-  background-color: #00164a;
+.video .arrow2 {
+  color: #ff1a1a;
+}
+.video .arrow3 {
+  color: #e60000;
+}
+.video .arrow4 {
+  color: #b30000;
+}
+.video .arrow5 {
+  color: #800000;
+}
+.footer {
+  text-align: center;
+  margin: 40px auto;
+  color: #7f767a;
+  font-size: 12px;
+}
+.footer a {
+  color: rgba(53, 128, 240, 0.8);
 }

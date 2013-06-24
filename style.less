@@ -8,11 +8,20 @@
 body,
 html {
     font-family: "Helvetica Neue";
+    background-color: #ececec;
+    margin: 0;
 }
 * {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #3580f0;
+    &:hover {
+        color: darken(#3580f0, 30%);
+    }
 }
 ul {
     list-style-type: none;
@@ -22,23 +31,50 @@ h1 {
     margin: 0 auto;
     width: 550px;
 }
+p {
+    display: none;
+}
+.tagline {
+    width: 400px;
+    margin: 20px auto;
+}
 .container {
     position: relative;
-    background-color: #e0e0e0;
+    background-color: #c4c4c4;
     width: 550px;
     height: 550px;
     margin: 0 auto;
 }
 #control-panel {
     width: 550px;
+    height: 120px;
     margin: 0 auto;
     margin-top: 20px;
+}
+.controls {
+    float: left;
+}
+.top-scores {
+    float: right;
+    text-shadow: 1px 1px 1px #cecece;
+    #score1 {
+        color: #ff4d4d;        
+    }
+    #score2 {
+        color: #3580f0;        
+    }
+    #score3 {
+        color: rgb(0, 166, 86);        
+    }
 }
 .rotateme {
     z-index: 10;
     position: absolute;
+    border: 1px solid fade(#857c7f, 60%);
+    box-shadow: 0px 0px 10px 0px #8B8B8B;
+    padding: 10px;
     &:after {
-        content: "^ This way up";
+        content: "↑ This way up";
         position: relative;
     }
 }
@@ -55,7 +91,7 @@ h1 {
     font-size: 20px;
 }
 button {
-    background-color: #4a7fff;
+    background-color: #3580f0;
     font-size: 15px;
     color: white;
     padding: 10px 20px;
@@ -63,16 +99,41 @@ button {
     outline: none;
     border: none;
     &:hover {
-        background-color: darken(#4a7fff, 10%);
+        background-color: darken(#3580f0, 30%);
     }
-    &:active,
-    &:focus {
-        box-shadow: 1px 1px 2px darken(#ff112b, 20%) inset;
+    // &.reset {
+    //     background-color: darken(#4a7fff, 40%);
+    //     &:hover {
+    //         background-color: darken(#4a7fff, 50%)
+    //     }
+    // }
+}
+.video {
+    width: 420px;
+    margin: 40px auto;
+    text-align: center;
+    .arrow1 {
+        color: #ff4d4d;
     }
-    &.reset {
-        background-color: darken(#4a7fff, 40%);
-        &:hover {
-            background-color: darken(#4a7fff, 50%)
-        }
+    .arrow2 {
+        color: darken(#ff4d4d, 10%);
+    }
+    .arrow3 {
+        color: darken(#ff4d4d, 20%);
+    }
+    .arrow4 {
+        color: darken(#ff4d4d, 30%);
+    }
+    .arrow5 {
+        color: darken(#ff4d4d, 40%);
+    }
+}
+.footer {
+    text-align: center;
+    margin: 40px auto;
+    color: #7f767a;
+    font-size: 12px;
+    a {
+        color: fade(#3580f0, 80%);
     }
 }
