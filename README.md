@@ -11,7 +11,7 @@ Using jQuery for and the browser, with some localStorage for keeping track of sc
 
 Click "Go!" to start the timer (you only have 5 seconds!) then click on the shapes and rotate them. The goal is to get them all as close to 90 degree angles (with the little arrow facing up). The closer your score to 0, the better.
 
-Challenge your friends!
+Challenge your friends! [StackenBlocken!](http://davezatch.github.io/StackenBlocken/)
 
 ---
 
