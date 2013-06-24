@@ -5,7 +5,7 @@ Get your blocks in order
 
 A quick little game I threw together inspired by this Conan sketch: [StackenBlocken](http://www.youtube.com/embed/QEN5-_93gQg "StackenBlocken")
 
-Using jQuery for and the browser, with some localStorage for keeping track of scores. 
+Using jQuery and the browser, with some localStorage for keeping track of scores, and LESS cuz it's awesome.
 
 ##How to Play
 

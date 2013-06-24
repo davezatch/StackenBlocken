@@ -228,7 +228,7 @@ $(document).ready(function() {
     }
 
     if (localStorage.getItem("score") === null) {
-        localStorage.setItem("score", [900, 900, 900]);
+        localStorage.setItem("score", [1000, 1000, 1000]);
     }
 
     var scoresOnLoad = localStorage.getItem("score");
