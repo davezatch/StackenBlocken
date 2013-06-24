@@ -5,12 +5,34 @@
     -o-transform: rotate(@x);
     -ms-transform: rotate(@x);
 }
+body,
+html {
+    font-family: "Helvetica Neue";
+}
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+h1 {
+    margin: 0 auto;
+    width: 550px;
+}
 .container {
     position: relative;
     background-color: #e0e0e0;
     width: 550px;
     height: 550px;
     margin: 0 auto;
+}
+#control-panel {
+    width: 550px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 .rotateme {
     z-index: 10;
@@ -26,24 +48,31 @@
     border: 3px dashed;
     box-sizing: border-box;
 }
-#control-panel {
-    margin-top: 20px;
-    border: 1px dotted;
-}
 #score {
     width: 40px;
-    // height: 40px;
     border: 1px dotted;
+    padding: 0 10px;
+    font-size: 20px;
 }
 button {
-    background-color: #ff112b;
+    background-color: #4a7fff;
+    font-size: 15px;
     color: white;
     padding: 10px 20px;
     cursor: pointer;
     outline: none;
     border: none;
+    &:hover {
+        background-color: darken(#4a7fff, 10%);
+    }
     &:active,
     &:focus {
         box-shadow: 1px 1px 2px darken(#ff112b, 20%) inset;
+    }
+    &.reset {
+        background-color: darken(#4a7fff, 40%);
+        &:hover {
+            background-color: darken(#4a7fff, 50%)
+        }
     }
 }
