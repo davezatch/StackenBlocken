@@ -213,11 +213,6 @@ $(document).ready(function() {
 
     function storeScores(newScore) {
 
-        if (localStorage.getItem("score") === null) {
-            localStorage.setItem("score", [900, 900, 900]);
-        }
-
-
         var currentScores = localStorage.getItem("score");
 
         currentScores = currentScores.split(",");
@@ -244,12 +239,15 @@ $(document).ready(function() {
         }
     }
 
+    if (localStorage.getItem("score") === null) {
+        localStorage.setItem("score", [900, 900, 900]);
+    }
+
     var scoresOnLoad = localStorage.getItem("score");
+
     scoresOnLoad = scoresOnLoad.split(",");
 
     displayScores(scoresOnLoad);
-
-
 
     createBoard();
 
