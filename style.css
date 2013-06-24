@@ -24,25 +24,41 @@ h1 {
   margin: 0 auto;
   width: 550px;
 }
-p {
+.instructions {
   display: none;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
 }
 .tagline {
   width: 400px;
   margin: 20px auto;
 }
-.container {
+.shortcut {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+.game-board {
   position: relative;
   background-color: #c4c4c4;
   width: 550px;
   height: 550px;
   margin: 0 auto;
+  border: 1px dotted;
+  border-top: none;
+  border-color: #9f9f9f;
 }
 #control-panel {
   width: 550px;
   height: 120px;
   margin: 0 auto;
   margin-top: 20px;
+  padding: 10px;
+  border: 1px dotted;
+  border-bottom: none;
+  border-color: #9f9f9f;
 }
 .controls {
   float: left;
@@ -104,16 +120,31 @@ button:hover {
   color: #ff4d4d;
 }
 .video .arrow2 {
-  color: #ff1a1a;
+  color: #ff3333;
 }
 .video .arrow3 {
-  color: #e60000;
+  color: #ff1a1a;
 }
 .video .arrow4 {
-  color: #b30000;
+  color: #ff0000;
 }
 .video .arrow5 {
+  color: #e60000;
+}
+.video .arrow6 {
+  color: #cd0000;
+}
+.video .arrow7 {
+  color: #b30000;
+}
+.video .arrow8 {
+  color: #9a0000;
+}
+.video .arrow9 {
   color: #800000;
+}
+.video .arrow10 {
+  color: #670000;
 }
 .footer {
   text-align: center;

@@ -1,10 +1,3 @@
-.rotate(@x) {
-    transform: rotate(@x);
-    -moz-transform: rotate(@x);
-    -webkit-transform: rotate(@x);
-    -o-transform: rotate(@x);
-    -ms-transform: rotate(@x);
-}
 body,
 html {
     font-family: "Helvetica Neue";
@@ -31,25 +24,41 @@ h1 {
     margin: 0 auto;
     width: 550px;
 }
-p {
+.instructions {
     display: none;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
 }
 .tagline {
     width: 400px;
     margin: 20px auto;
 }
-.container {
+.shortcut {
+    font-size: 0.9em;
+    color: fade(white, 70%);
+}
+.game-board {
     position: relative;
     background-color: #c4c4c4;
     width: 550px;
     height: 550px;
     margin: 0 auto;
+    border: 1px dotted;
+    border-top: none;
+    border-color: #9f9f9f;
 }
 #control-panel {
     width: 550px;
     height: 120px;
     margin: 0 auto;
     margin-top: 20px;
+    padding: 10px;
+    border: 1px dotted;
+    border-bottom: none;
+    border-color: #9f9f9f;
 }
 .controls {
     float: left;
@@ -116,16 +125,31 @@ button {
         color: #ff4d4d;
     }
     .arrow2 {
-        color: darken(#ff4d4d, 10%);
+        color: darken(#ff4d4d, 5%);
     }
     .arrow3 {
-        color: darken(#ff4d4d, 20%);
+        color: darken(#ff4d4d, 10%);
     }
     .arrow4 {
-        color: darken(#ff4d4d, 30%);
+        color: darken(#ff4d4d, 15%);
     }
     .arrow5 {
+        color: darken(#ff4d4d, 20%);
+    }
+    .arrow6 {
+        color: darken(#ff4d4d, 25%);
+    }
+    .arrow7 {
+        color: darken(#ff4d4d, 30%);
+    }
+    .arrow8 {
+        color: darken(#ff4d4d, 35%);
+    }
+    .arrow9 {
         color: darken(#ff4d4d, 40%);
+    }
+    .arrow10 {
+        color: darken(#ff4d4d, 45%);
     }
 }
 .footer {

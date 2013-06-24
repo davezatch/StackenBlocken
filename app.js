@@ -1,14 +1,17 @@
 $(document).ready(function() {
-    var $container = $(".container");
+    var $container = $(".game-board");
+
+    // initialize with scores at 0
     var scores = {
         "rotate1": 0,
         "rotate2": 0,
         "rotate3": 0,
         "rotate4": 0
     };
-  // the same as yours.
+
     function rotateOnMouse(e, shape) {
-        // console.log(e.target);
+
+        // all the stuff we need to capture our mouse, locate it on the page, and calculate the degree of rotation
         var offset = shape.offset();
         var center_x = (offset.left) + ($(shape).width() / 2);
         var center_y = (offset.top) + ($(shape).height() / 2);
@@ -17,38 +20,37 @@ $(document).ready(function() {
         var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);
         var degree = Math.round((radians * (180 / Math.PI) * -1) + 180);
 
+        // update the score in real time
         calculateScore(degree, shape);
 
+        // rotate the shape by the mouse's degree to the center
         $(shape).css("-moz-transform", "rotate(" + degree + "deg)");
         $(shape).css("-webkit-transform", "rotate(" + degree + "deg)");
         $(shape).css("-o-transform", "rotate(" + degree + "deg)");
         $(shape).css("-ms-transform", "rotate(" + degree + "deg)");
 
-        // $("#angle").text(degree);
     }
 
     var calibratedScore = 0;
 
+    // run the score through a little magic to calculate
     function calculateScore(degree, shape) {
 
         calibratedScore = -(degree - 360) + 180;
 
         calibratedScore = (calibratedScore >= 360) ? calibratedScore - 360 : calibratedScore;
 
-        // console.log(calibratedScore);
-
         scores[shape[0].id] = calibratedScore;
     }
 
+    // capture mouse on click of one of our shapes and call the rotateMouse function
     function handleMouse() {
         $(".rotateme").mousedown(function(e) {
             e.preventDefault();
             var target = $(e.originalEvent.target);
             $(document).bind("mousemove.rotate", function(e2) {
-              // console.log($('.rotateme'));
                 if (target.hasClass("rotateme")) {
                     rotateOnMouse(e2, target);
-
                 }
             });
         });
@@ -74,7 +76,6 @@ $(document).ready(function() {
 
         return;
     }
-
 
     function startGame() {
         // createBoard();
@@ -110,8 +111,6 @@ $(document).ready(function() {
         startGame();
     });
 
-  // $(".start").click();
-
     $(document).mouseup(function() {
         $(document).unbind("mousemove.rotate");
     });
@@ -127,34 +126,6 @@ $(document).ready(function() {
     function randomUberallColor() {
         return uberallColors[Math.floor(Math.random()*uberallColors.length)];
     }
-
-    function randomColor() {
-        var color = "rgb(" + Math.floor(Math.random()*255) + "," +
-          Math.floor(Math.random()*255) + "," + Math.floor(Math.random()*255) + ")";
-        color = toHex(color);
-        return "#" + color;
-    }
-
-    function componentToHex(c) {
-        var hex = c.toString(16);
-        return hex.length === 1 ? "0" + hex : hex;
-    }
-
-    function rgbToHex(rgbArr) {
-        var result = "";
-        for (var i = 0; i < rgbArr.length; i++) {
-            result += componentToHex(parseInt(rgbArr[i], 10));
-        }
-        return result;
-    }
-
-    function toHex(rgb) {
-        rgb = rgb.slice(4, -1);
-        rgb = rgb.split(",");
-        return rgbToHex(rgb);
-    }
-
-  // var shapeOffset = 40;
 
     function createShape(shapeOffsetX, shapeOffsetY, id) {
         var shape = $("<div class='rotateme' id='" + id + "'></div>");
@@ -190,11 +161,28 @@ $(document).ready(function() {
     }
 
     $("#explanation-link").click(function() {
-        $("p").fadeToggle();
+        $(".instructions").slideToggle();
     });
 
     $(".reset").click(function() {
         createBoard();
+    });
+
+    $(document).keypress(function(event) {
+        if (event.target.tagName === "BODY") {
+            switch(event.which)
+            {
+                // key: "g"
+                case 103:   
+                    startGame();
+                    break;
+                // key: "r"
+                case 114:   
+                    createBoard();
+                    break;
+            }
+
+        }
     });
 
     function createBoard() {

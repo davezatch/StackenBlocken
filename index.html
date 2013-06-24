@@ -9,55 +9,77 @@
 
 </head>
 <body>
-    <h1>Stackenblocken</h1>
-    <div class="tagline">
-        <a href="javascript:void(0)" id="explanation-link">What do I do!?</a>
-        <p>The goal of the game: get as close to <strong>0</strong> points as possible, by moving the shapes into right angles.</p>
-    </div>
-    <div id="control-panel">
-        <div class="controls">
-            <button class="start">Go!</button>
-            <button class="reset">Reset Board</button>
-            <br>
-            <ul>
-                <li>Time left: <span id="timer">5</span></li>
-                <li>Score: <span id="score"></span></li>
-            </ul>
-        </div>
-        <div class="top-scores">
-            <legend>Top Scores:</legend>
-            <ol>
-                <li id="score1"></li>
-                <li id="score2"></li>
-                <li id="score3"></li>
-            </ol>
-        </div>
-    </div>
     <div class="container">
+        <h1>Stackenblocken</h1>
+        <div class="tagline">
+            <a href="javascript:void(0)" id="explanation-link">What do I do!?</a>
+            <div class="instructions">
+                <p>The goal of the game: get as close to <strong>0</strong> points as possible, by moving the shapes into right angles.
+                <br>
+                <br>
+                Point them in the direction of the arrows.</p>
+                <legend>Keyboard shortcuts:</legend>
+                <ul>
+                    <li>g: Go!</li>
+                    <li>r: Reset board</li>
+                </ul>
+            </div>
+        </div>
+        <div id="control-panel">
+            <div class="controls">
+            <button class="start">Go! <span class="shortcut">(g)</span></button>
+                <button class="reset">Reset Board <span class="shortcut">(r)</span></button>
+                <br>
+                <ul>
+                    <li>Time left: <span id="timer">5</span></li>
+                    <li>Score: <span id="score"></span></li>
+                </ul>
+            </div>
+            <div class="top-scores">
+                <legend>Top Scores:</legend>
+                <ol>
+                    <li id="score1"></li>
+                    <li id="score2"></li>
+                    <li id="score3"></li>
+                </ol>
+            </div>
+        </div>
+        <div class="game-board">
 
-    </div>
+        </div>
 
-    <div class="video">
-        <h3>
-            Why!?
-            <br>
-            <br>
-            <span class="arrow1">↓</span>
-            <br>
-            <span class="arrow2">↓</span>
-            <br>
-            <span class="arrow3">↓</span>
-            <br>
-            <span class="arrow4">↓</span>
-            <br>
-            <span class="arrow5">↓</span>
-            <br>
-        </h3>
-        <iframe width="420" height="315" src="http://www.youtube.com/embed/QEN5-_93gQg" frameborder="0" allowfullscreen></iframe>
-    </div>
+        <div class="video">
+            <h3>
+                Why!?
+                <br>
+                <br>
+                <span class="arrow1">↓</span>
+                <br>
+                <span class="arrow2">↓</span>
+                <br>
+                <span class="arrow3">↓</span>
+                <br>
+                <span class="arrow4">↓</span>
+                <br>
+                <span class="arrow5">↓</span>
+                <br>
+                <span class="arrow6">↓</span>
+                <br>
+                <span class="arrow7">↓</span>
+                <br>
+                <span class="arrow8">↓</span>
+                <br>
+                <span class="arrow9">↓</span>
+                <br>
+                <span class="arrow10">↓</span>
+                <br>
+            </h3>
+            <iframe width="420" height="315" src="http://www.youtube.com/embed/QEN5-_93gQg" frameborder="0" allowfullscreen></iframe>
+        </div>
 
-    <div class="footer">
-        An <a href="http://uberall.com" target="_blank">uberall</a> joint, made with love by David
+        <div class="footer">
+            An <a href="http://uberall.com" target="_blank">uberall</a> joint, made with love by David
+        </div>
     </div>
 </body>
 </html>
