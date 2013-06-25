@@ -16,3 +16,7 @@ Challenge your friends! [StackenBlocken!](http://davezatch.github.io/StackenBloc
 ---
 
 Made with love in Berlin by [David Carter](https://github.com/davezatch "David Carter"), for my lovely colleagues at [Uberall](http://www.uberall.com "Uberall")
+
+---
+
+License is MIT: Do whatever you want with it.
